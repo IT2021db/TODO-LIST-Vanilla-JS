@@ -41,3 +41,10 @@
 .tasks__button--remove {
   background-color: red;
 }
+
+.tasks__button--remove:hover {
+  background-color: hsl(0, 100%, 65%)
+}
+.tasks__button--remove:active {
+  background-color: hsl(0, 100%, 70%)
+}
