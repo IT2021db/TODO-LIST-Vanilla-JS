@@ -12,10 +12,20 @@
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+.tasks__item--hidden{
+  display: none;
+}
 
 .tasks__content--done {
   text-decoration: line-through;
 }
+.tasks__itemButton{
+  background-color: white;
+  color: teal;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  }
 
 .tasks__button {
   border: none;

@@ -36,7 +36,7 @@
         // tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     }
-    const allTasksDone=()=>{
+    const thickAllDone=()=>{
         tasks=tasks.map(tasks=>{ return {...tasks, done:true};
             // tasks=tasks.map(({done})=> done)
             // tasks=tasks.map((tasks)=>{ return {content:task.content, done:true};
@@ -47,6 +47,14 @@
         console.log(tasks);
         render();
         
+    }
+    const toggleHideDoneTasks=()=>{
+        hideDoneTasks=!hideDoneTasks;
+
+        console.log("hideDoneTasks= "  +hideDoneTasks);
+        
+        render();
+
     }
 
     const onFormSubmit = (event) => {
@@ -80,26 +88,37 @@
     const bindButtonsEvents = () => {
 
         const allTasksDoneButton = document.querySelector(".js-allTasksDoneButton");
-        console.log("dziala");
+      
         if (tasks.length) {
             allTasksDoneButton.addEventListener("click", () => {
                 console.log("jest buton");
                
                 console.log(hideDoneTasks);
-                allTasksDone(); 
+                thickAllDone(); 
                
             });
         }
        
-
+        const hideDoneButton = document.querySelector(".js-hideDoneButton");
+        console.log("dziala");
+        if (tasks.length) {
+            hideDoneButton.addEventListener("click", () => {
+                console.log("jest hide-buton");
+               
+                console.log("button hideDoneTasks "+ hideDoneTasks);
+                toggleHideDoneTasks(); 
+               
+            });
+        }
 
     }
 
     const renderTasks = () => {
+        console.log(hideDoneTasks);
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-                <li class="tasks__item" >
+                <li class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""}">
                     <button class="tasks__button tasks__button--toggleDone js-done">
                         ${task.done ? "✓" : ""}
                     </button>
@@ -119,8 +138,8 @@
             let htmlButtonString = "";
             htmlButtonString += `
              Lista zadań 
-                <button type="click" >Ukryj zrobione</button>
-                <button type="click" class="js-allTasksDoneButton" ${tasks.every(({done})=>done)? "disabled": ""}>
+                <button type="click" class="tasks__itemButton js-hideDoneButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
+                <button type="click"  class="tasks__itemButton js-allTasksDoneButton" ${tasks.every(({done})=>done) ? "disabled": ""}>
                 Ukończ wszystkie</button>
             `;
             document.querySelector(".js-tasksButton").innerHTML = htmlButtonString;
