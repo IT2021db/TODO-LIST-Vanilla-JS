@@ -1,16 +1,25 @@
 .section {
-    background-color: #fff;
-    margin: 10px 0;
-    box-shadow: 0 0 5px #ddd;
-  }
-  
-  .section__header {
-    font-size: 20px;
-    margin: 0px;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .section__body {
-    padding: 20px;
-  }
+  background-color: #fff;
+  margin: 10px 0;
+  box-shadow: 0 0 5px #ddd;
+}
+.section__body {
+  padding: 20px;
+}
+
+.section__header {
+  border-bottom: 1px;
+  /* display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  justify-content: space-between;
+  align-items: center; */
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.section__title {
+  font-size: 20px;
+  margin: 0;
+}
+
