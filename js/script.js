@@ -30,7 +30,7 @@
 
     const markAllTasksDoneDone = () => {
         tasks = tasks.map((task) => ({
-            ...tasks,
+            ...task,
             done: true,
         }));
 
@@ -69,7 +69,7 @@
         }
 
         const toggleHideTaskButton = document.querySelector(".js-toggleHideDoneTask");
-        
+
         if (toggleHideTaskButton) {
             toggleHideTaskButton.addEventListener("click", toggleHideDoneTasks);
         }
