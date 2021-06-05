@@ -39,8 +39,6 @@
         render();
     }
 
-
-
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButtons, index) => {
@@ -49,6 +47,7 @@
             });
         });
     }
+
     const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
@@ -57,6 +56,7 @@
             });
         });
     }
+
     const bindButtonsEvents = () => {
         const markAllDoneButton = document.querySelector(".js-markAllDone");
 
@@ -69,7 +69,6 @@
         if (toggleHideTaskButton) {
             toggleHideTaskButton.addEventListener("click", toggleHideDoneTasks);
         }
-
     }
 
     const renderTasks = () => {
@@ -110,7 +109,6 @@
                     </button>
             `;
     };
-
 
     const render = () => {
         renderTasks();
