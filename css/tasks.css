@@ -24,7 +24,6 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .buttons__button {
@@ -35,15 +34,15 @@
   transition: color 0.3s;
   cursor: pointer;
 }
+
 @media (max-width: 767px) {
   .buttons__button {
     text-align: center;
-    margin:0;
+    margin: 0;
   }
 }
 
-
-.buttons__button:disabled{
+.buttons__button:disabled {
   color: #ccc;
   cursor: default;
 }
